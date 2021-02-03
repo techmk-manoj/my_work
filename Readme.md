@@ -11,7 +11,7 @@ Hotel Booking System
 
 ## II. How to Run
 ```
-1. clone this repository
+1. clone this repository - https://github.com/techmk-manoj/my_work.git
 2. install JDK 1.8
 3. install MySQL 5.7
     - run at localhost:3306 
