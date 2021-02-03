@@ -15,7 +15,7 @@ Hotel Booking System
 2. install JDK 1.8
 3. install MySQL 5.7
     - run at localhost:3306 
-- create databases with name 'M3BI-HM' ;
+- create databases with name 'shbs' ;
 4.import project as gradle in STS above version 3.9.XX
 5.update build.gradle
 5. run as spring boot app
