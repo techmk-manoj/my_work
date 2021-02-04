@@ -39,6 +39,7 @@ public class ReservationService {
 		reservation.setCancelled(Boolean.FALSE);
 		reservation.setStatus(request.getStatus());
 		reservation.setAmountPaid(request.getTotalAmount());
+		reservation.setRoomAmount(request.getRoomAmount());
 
 		return reservationRepository.save(reservation);
 	}
@@ -105,6 +106,15 @@ public class ReservationService {
 
 	private RoomType getRoomType(Integer id) {
 		return roomTypeRepository.findOne(id).orElseThrow(() -> new NotFoundException(RoomType.class, id.toString()));
+	}
+
+	public Iterable<Reservation> getAllRoomByStatus(List<Integer> id, String status) {
+		return reservationRepository.findByCustomerIdInAndStatus(id, status);
+	}
+
+	@Transactional
+	public Iterable<Reservation> update(List<Reservation> rs) {
+		return reservationRepository.save(rs);
 	}
 
 }

@@ -35,5 +35,7 @@ public class ReservationRequest {
     
     private Double totalAmount;
     
+    private Double roomAmount;
+    
     
 }

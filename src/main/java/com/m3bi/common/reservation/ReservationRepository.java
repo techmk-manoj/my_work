@@ -24,4 +24,17 @@ public interface ReservationRepository extends Jpa8Repository<Reservation, Integ
     Optional<Reservation> findByIdAndAndCancelledForUpdate(Integer id, Boolean cancelled);
 
     Optional<Reservation> findByIdAndAndCancelled(Integer id, Boolean cancelled);
+    
+	/*
+	 * @Lock(LockModeType.PESSIMISTIC_WRITE)
+	 * 
+	 * @Query(value =
+	 * "select * from reservation r where customer_id in (?1) and status='?2'")
+	 * List<Reservation> getAllBookingByStatus(List<Integer> id,String status);
+	 */
+    
+    
+    List<Reservation> findByCustomerIdInAndStatus(List<Integer> id,String status);
+    
+    
 }

@@ -7,8 +7,13 @@ import com.m3bi.common.reservation.ReservationService;
 import com.m3bi.common.reservation.exception.PointsNotAvailableException;
 import com.m3bi.common.roomtype.RoomType;
 import com.m3bi.common.roomtype.RoomTypeService;
+import com.mysql.fabric.xmlrpc.base.Array;
 
 import lombok.RequiredArgsConstructor;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -49,7 +54,7 @@ public class ReservationController {
 			}
 
 			/* update the poinst after succesful transaction */
-
+			request.setRoomAmount(amount);
 			customerService.update(customer);
 
 		}
@@ -83,4 +88,5 @@ public class ReservationController {
 
 		return reservationService.cancel(id);
 	}
+
 }

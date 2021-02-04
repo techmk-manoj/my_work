@@ -1,5 +1,7 @@
 package com.m3bi.common.customer;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.m3bi.common.exception.NotFoundException;
@@ -19,6 +21,11 @@ public class CustomerService {
 	public Customer update(Customer customer) {
 
 		return customerRepository.save(customer);
+
+	}
+
+	public List<Customer> getALlCustomer() {
+		return (List<Customer>) customerRepository.findAll();
 
 	}
 

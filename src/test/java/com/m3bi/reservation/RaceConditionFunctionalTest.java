@@ -51,7 +51,7 @@ public class RaceConditionFunctionalTest extends FunctionalTest {
 						ZONE_OFFSET),
 				ZonedDateTime.of(LocalDate.parse("2100-01-04", DateTimeFormatter.ISO_LOCAL_DATE), LocalTime.MIN,
 						ZONE_OFFSET),
-				null, (double) 0);
+				null, (double) 0, null);
 
 		given().contentType(ContentType.JSON).accept(ContentType.JSON).body(request).when().post("/reservations");
 	}
