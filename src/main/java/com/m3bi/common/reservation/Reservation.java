@@ -52,7 +52,7 @@ public class Reservation {
 	private String status;
 	
 	private double amountPaid;
-	
+
 	private double roomAmount;
 
 }

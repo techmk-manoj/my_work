@@ -57,6 +57,7 @@ CREATE TABLE IF NOT EXISTS reservation (
     updated_at BIGINT UNSIGNED NOT NULL,
     status varchar(20),
     amount_paid BIGINT(20),
+    room_amout BIGINT(20),
     PRIMARY KEY (id),
     FOREIGN KEY (room_type_id) REFERENCES room_type(id) ON UPDATE CASCADE ON DELETE CASCADE,
     FOREIGN KEY (customer_id) REFERENCES customer(id) ON UPDATE CASCADE ON DELETE CASCADE
@@ -67,4 +68,4 @@ INSERT INTO users VALUES (1, 'admin', '$2a$10$4yB3di.lJb3/Uh6edRwAlOHU/h31PrcEss
 INSERT INTO authorities VALUES (1, 'admin', 'ROLE_ADMIN');
 INSERT INTO room_type VALUES (1, "executive", "executive room only for 1 person", "", 30, 1000, 1612373010587, 1612373010587);
 INSERT INTO customer VALUES (1, 'customer', '$2a$10$4yB3di.lJb3/Uh6edRwAlOHU/h31PrcEssd79oS0sNmIHDmUAw9Wu', 'Customer', 1612373010587, 1612373010587,4000);
-INSERT INTO reservation VALUES (1, 1, 1, 5, 1612373010587, 1612373010587, FALSE, 1612373010587, 1612373010587,"Booked",2000);
+INSERT INTO reservation VALUES (1, 1, 1, 5, 1612373010587, 1612373010587, FALSE, 1612373010587, 1612373010587,"Booked",2000,2000);

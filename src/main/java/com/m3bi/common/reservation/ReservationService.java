@@ -107,8 +107,8 @@ public class ReservationService {
 	private RoomType getRoomType(Integer id) {
 		return roomTypeRepository.findOne(id).orElseThrow(() -> new NotFoundException(RoomType.class, id.toString()));
 	}
-
-	public Iterable<Reservation> getAllRoomByStatus(List<Integer> id, String status) {
+	
+	public List<Reservation> getAllBookingByCustId(List<Integer> id, String status) {	
 		return reservationRepository.findByCustomerIdInAndStatus(id, status);
 	}
 
